@@ -1,0 +1,151 @@
+{
+  "target": "asset",
+  "mode": "sheet",
+  "prompt": "",
+  "role": "",
+  "input": "/workspace/assets/raw/weapons.jpg",
+  "threshold": 100,
+  "edge_threshold": 150,
+  "duration": 200,
+  "rows": 1,
+  "cols": 3,
+  "cell_size": 256,
+  "fit_scale": 0.86,
+  "trim_border": 4,
+  "edge_clean_depth": 3,
+  "align": "center",
+  "shared_scale": true,
+  "component_mode": "largest",
+  "component_padding": 0,
+  "min_component_area": 1,
+  "edge_touch_margin": 0,
+  "frame_labels": [
+    "sheet-1",
+    "sheet-2",
+    "sheet-3"
+  ],
+  "frames": [
+    {
+      "grid": [
+        0,
+        0
+      ],
+      "source_box": [
+        0,
+        0,
+        576,
+        1152
+      ],
+      "component_mode": "largest",
+      "component_count": 2,
+      "selected_component_area": 36944,
+      "selected_component_bbox": [
+        75,
+        448,
+        379,
+        697
+      ],
+      "crop_bbox": [
+        75,
+        448,
+        379,
+        697
+      ],
+      "edge_touch": true,
+      "output_size": [
+        126,
+        103
+      ],
+      "paste_position": [
+        65,
+        76
+      ]
+    },
+    {
+      "grid": [
+        0,
+        1
+      ],
+      "source_box": [
+        576,
+        0,
+        1152,
+        1152
+      ],
+      "component_mode": "largest",
+      "component_count": 2,
+      "selected_component_area": 40370,
+      "selected_component_bbox": [
+        0,
+        466,
+        478,
+        657
+      ],
+      "crop_bbox": [
+        0,
+        466,
+        478,
+        657
+      ],
+      "edge_touch": true,
+      "output_size": [
+        198,
+        79
+      ],
+      "paste_position": [
+        29,
+        88
+      ]
+    },
+    {
+      "grid": [
+        0,
+        2
+      ],
+      "source_box": [
+        1152,
+        0,
+        1728,
+        1152
+      ],
+      "component_mode": "largest",
+      "component_count": 2,
+      "selected_component_area": 52884,
+      "selected_component_bbox": [
+        0,
+        425,
+        531,
+        721
+      ],
+      "crop_bbox": [
+        0,
+        425,
+        531,
+        721
+      ],
+      "edge_touch": true,
+      "output_size": [
+        220,
+        122
+      ],
+      "paste_position": [
+        18,
+        67
+      ]
+    }
+  ],
+  "edge_touch_frames": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ]
+  ]
+}
