@@ -167,6 +167,7 @@ interface Zombie {
   kx: number;
   ky: number;
   walk: number;
+  face: number;
   enraged: boolean;
 }
 interface Bullet {
@@ -647,6 +648,7 @@ export class Engine {
       kx: 0,
       ky: 0,
       walk: 0,
+      face: 1,
       enraged: false,
     }));
     const spot = this.edgeSpot();
@@ -657,6 +659,7 @@ export class Engine {
     z.kx = 0;
     z.ky = 0;
     z.walk = Math.random() * 4;
+    z.face = this.player.x >= spot.x ? 1 : -1;
     z.enraged = false;
     let hp = this.waveHp;
     let speed = this.waveSpeed;
@@ -723,7 +726,10 @@ export class Engine {
       const dx = this.player.x - z.x;
       const dy = this.player.y - z.y;
       const d = Math.hypot(dx, dy) || 1;
-      z.x += (dx / d) * z.speed * dt + z.kx * dt;
+      const vx = (dx / d) * z.speed + z.kx;
+      if (vx > 14) z.face = 1;
+      else if (vx < -14) z.face = -1;
+      z.x += vx * dt;
       z.y += (dy / d) * z.speed * dt + z.ky * dt;
       z.kx *= Math.exp(-7 * dt);
       z.ky *= Math.exp(-7 * dt);
@@ -1171,14 +1177,15 @@ export class Engine {
     for (const z of this.zombies) {
       if (!z.active) continue;
       const frame = Math.floor(z.walk) % 4;
-      const ang = Math.atan2(this.player.y - z.y, this.player.x - z.x);
       const sheet = z.kind === "boss" ? this.img.boss : this.img.zombie;
       const size = z.radius * (z.kind === "boss" ? 2.55 : 2.7);
       this.shadow(ctx, z.x, z.y, z.radius * 0.9);
       ctx.save();
       if (z.flash > 0) ctx.filter = "brightness(2.6)";
       if (z.kind === "boss" && this.act === 3) ctx.filter = z.flash > 0 ? "brightness(2.6) saturate(0.75)" : "saturate(0.8)";
-      this.blit(ctx, sheet, 2, 2, frame, z.x, z.y, size, ang);
+      ctx.translate(z.x, z.y);
+      ctx.scale(z.face, 1);
+      this.blit(ctx, sheet, 2, 2, frame, 0, 0, size, 0);
       ctx.restore();
     }
 

@@ -129,7 +129,7 @@ export function GameView() {
       {phase === "menu" ? (
         <Overlay>
           <p className="text-sm tracking-widest text-accent">THREE ACTS</p>
-          <h1 className="mt-2 font-display text-5xl leading-none text-fg">ASHLINE</h1>
+          <h1 className="mt-2 font-display text-4xl leading-none tracking-tight text-fg sm:text-5xl">Zombie Land #1</h1>
           <p className="mt-4 text-base leading-relaxed text-muted">
             Night shift at a hospital that will not stay down. You start with a pistol. The yard hides a shotgun.
             The ward hides a machine gun.

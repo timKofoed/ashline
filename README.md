@@ -1,4 +1,4 @@
-# ASHLINE
+# Zombie Land #1
 
 A three-act top-down zombie shooter for iPad, with touch sticks and a hardware keyboard.
 

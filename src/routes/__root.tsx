@@ -3,7 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "ASHLINE";
+const APP_NAME = "Zombie Land #1";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -18,7 +18,7 @@ export const Route = createRootRoute({
       { name: "apple-mobile-web-app-capable", content: "yes" },
       {
         name: "description",
-        content: "ASHLINE — a three-act top-down zombie shooter. Touch sticks or a hardware keyboard.",
+        content: "Zombie Land #1 — a three-act top-down zombie shooter. Touch sticks or a hardware keyboard.",
       },
     ],
     links: [
